@@ -16,13 +16,14 @@ class ForegroundService : Service() {
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         createNotificationChannel()
         music= MediaPlayer.create(this,R.raw.song)
-        val returnIntent=Intent(this,MainActivity::class.java)
-        val pendingIntent:PendingIntent= PendingIntent.getActivity(this,0,returnIntent,0)
+        val notificationIntent=Intent(this,MainActivity::class.java)
+        val pendingIntent:PendingIntent= PendingIntent.getActivity(this,1,notificationIntent,0)
         music.isLooping=true
         val notification=NotificationCompat.Builder(this,CHANNEL_ID)
             .setContentTitle("Notification")
             .setContentText("Music player service")
             .setSmallIcon(R.drawable.ic_music)
+            .setContentIntent(pendingIntent)
             .build()
         music.start()
         startForeground(1,notification)
