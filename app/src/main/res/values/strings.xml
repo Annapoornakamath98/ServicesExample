@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">MusicPlayer KT</string>
     <string name="stop">STOP</string>
+    <string name="start_foreground_service">Start foreground service</string>
+    <string name="stop_foreground_service">Stop foreground service</string>
+    <string name="start_background_service">Start background service</string>
+    <string name="stop_background_service">Stop background service</string>
 </resources>

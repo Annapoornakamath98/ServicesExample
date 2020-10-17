@@ -5,11 +5,12 @@ import android.content.Intent
 import android.media.MediaPlayer
 import android.os.IBinder
 
-class MyService : Service() {
-    lateinit var music:MediaPlayer
+class BackgroundService : Service() {
+   private lateinit var music:MediaPlayer
 
     override fun onCreate() {
         music= MediaPlayer.create(this,R.raw.song)
+        music.isLooping=true
         super.onCreate()
     }
 
